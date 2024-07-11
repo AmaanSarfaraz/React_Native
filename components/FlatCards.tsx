@@ -6,16 +6,16 @@ const FlatCards = () => {
     <View style={[styles.container]}>
       <Text style={styles.text}>First Project</Text>
       <View style={[styles.innerContainer]}>
-        <View style={[styles.redView]}>
+        <View style={[styles.redView, styles.card]}>
           <Text>Red</Text>
         </View>
-        <View style={[styles.greenView]}>
+        <View style={[styles.greenView, styles.card]}>
           <Text>green</Text>
         </View>
-        <View style={[styles.blueView]}>
+        <View style={[styles.blueView, styles.card]}>
           <Text>blue</Text>
         </View>
-        <View style={[styles.violetView]}>
+        <View style={[styles.violetView, styles.card]}>
           <Text>Violet</Text>
         </View>
       </View>
@@ -36,51 +36,28 @@ const styles = StyleSheet.create({
   },
   redView: {
     backgroundColor:'red',
-    padding: 10,
-    marginBottom: 10,
-    width: 100,
-    height: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 10,
   },
   greenView: {
     backgroundColor:'green',
-    padding: 10,
-    marginBottom: 10,
-    width: 100,
-    height: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 10,
   },
   blueView: {
     backgroundColor:'blue',
-    padding: 10,
-    marginBottom: 10,
-    width: 100,
-    height: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 10,
-
   },
   violetView: {
     backgroundColor:'violet',
-    padding: 10,
-    marginBottom: 10,
-    width: 100,
-    height: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   innerContainer: {
     flex: 1,
     flexDirection: 'row',
-    padding: 5,
   },
-  pad: {
-    padding: 10,
+  card: {
+    margin: 10,
+    borderRadius: 10,
+    flex:1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 100,
+    height: 100,
   }
 })
 
