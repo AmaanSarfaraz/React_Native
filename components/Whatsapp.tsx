@@ -4,6 +4,7 @@ import Scanner from 'react-native-vector-icons/MaterialIcons';
 import Camera from 'react-native-vector-icons/Feather';
 import DotsVertical from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'; // Import for double tick icon
 
 const Whatsapp = () => {
   const people = [
@@ -12,71 +13,81 @@ const Whatsapp = () => {
       image: 'https://randomuser.me/api/portraits/women/1.jpg',
       date: '2024-07-10',
       lastMessage: 'Hey, how are you?',
+      tickColor: 'gray',
     },
     {
       name: 'Bob Smith',
       image: 'https://randomuser.me/api/portraits/men/1.jpg',
       date: '2024-07-09',
       lastMessage: 'Are we still meeting tomorrow?',
+      tickColor: 'blue',
     },
     {
       name: 'Cathy Brown',
       image: 'https://randomuser.me/api/portraits/women/2.jpg',
       date: '2024-07-08',
       lastMessage: 'I loved the movie!',
+      tickColor: 'blue',
     },
     {
       name: 'David Wilson',
       image: 'https://randomuser.me/api/portraits/men/2.jpg',
       date: '2024-07-07',
       lastMessage: 'See you at the gym.',
+      tickColor: 'gray',
     },
     {
       name: 'Eva Davis',
       image: 'https://randomuser.me/api/portraits/women/3.jpg',
       date: '2024-07-06',
       lastMessage: 'Can you send me the files?',
+      tickColor: 'blue',
     },
     {
       name: 'Frank Miller',
       image: 'https://randomuser.me/api/portraits/men/3.jpg',
       date: '2024-07-05',
       lastMessage: 'Happy birthday!',
+      tickColor: 'gray',
     },
     {
       name: 'Grace Lee',
       image: 'https://randomuser.me/api/portraits/women/4.jpg',
       date: '2024-07-04',
       lastMessage: 'Let’s catch up soon.',
+      tickColor: 'blue',
     },
     {
       name: 'Henry Clark',
       image: 'https://randomuser.me/api/portraits/men/4.jpg',
       date: '2024-07-03',
       lastMessage: 'Goodnight!',
+      tickColor: 'gray',
     },
     {
       name: 'Ivy Harris',
       image: 'https://randomuser.me/api/portraits/women/5.jpg',
       date: '2024-07-02',
       lastMessage: 'Sure, no problem.',
+      tickColor: 'blue',
     },
     {
       name: 'Jack White',
       image: 'https://randomuser.me/api/portraits/men/5.jpg',
       date: '2024-07-01',
       lastMessage: 'I’ll be there in 5 minutes.',
+      tickColor: 'gray',
     },
-  ];  
-  
+  ];
+
   return (
-    <View style={{backgroundColor:'white'}}>
+    <View style={{ backgroundColor: 'white' }}>
       <View style={styles.top}>
         <Text style={styles.logo}>WhatsApp</Text>
         <View style={styles.sideIcons}>
-          <Scanner name='qr-code-scanner' size={30} color={'#101519'} style={styles.icon}/>
-          <Camera name='camera' size={30} color={'#101519'} style={styles.icon}/>
-          <DotsVertical name='dots-vertical' size={30} color={'#101519'} style={styles.icon}/>
+          <Scanner name='qr-code-scanner' size={30} color={'#101519'} style={styles.icon} />
+          <Camera name='camera' size={30} color={'#101519'} style={styles.icon} />
+          <DotsVertical name='dots-vertical' size={30} color={'#101519'} style={styles.icon} />
         </View>
       </View>
       <View style={styles.inputContainer}>
@@ -99,15 +110,18 @@ const Whatsapp = () => {
         </TouchableOpacity>
       </View>
       <View>
-        {people.map(({name, image, date, lastMessage}) => (
+        {people.map(({ name, image, date, lastMessage, tickColor }) => (
           <View key={date} style={styles.chat}>
-            <Image source={{uri: image}} style={styles.peopleImage} />
+            <Image source={{ uri: image }} style={styles.peopleImage} />
             <View style={styles.chatContent}>
               <View style={styles.innerChat}>
                 <Text style={styles.peopleName}>{name}</Text>
                 <Text style={styles.peopleDate}>{date}</Text>
               </View>
-              <Text style={styles.peopleLastMessage}>{lastMessage}</Text>
+              <View style={styles.messageContainer}>
+                <MaterialCommunityIcons name="check-all" size={16} color={tickColor} style={styles.tickIcon} />
+                <Text style={styles.peopleLastMessage}>{lastMessage}</Text>
+              </View>
             </View>
           </View>
         ))}
@@ -188,6 +202,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 5,
+  },
+  messageContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  tickIcon: {
+    marginRight: 5,
   },
   peopleName: {
     fontSize: 16,
