@@ -9,7 +9,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 const Whatsapp = () => {
   const people = [
     {
-      name: 'Alice Johnson',
+      name: 'Jhon doe',
       image: 'https://randomuser.me/api/portraits/women/1.jpg',
       date: '2024-07-10',
       lastMessage: 'Hey, how are you?',
