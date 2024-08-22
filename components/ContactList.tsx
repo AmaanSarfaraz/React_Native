@@ -9,7 +9,7 @@ const ContactList = () => {
     ]
   return (
     <View>
-      <Text style={styles.cardHeading}>ContactList</Text>
+      <Text style={styles.text}>ContactList</Text>
       <ScrollView  scrollEnabled={false}>
         {contacts.map(({id, name, phone, imageUrl}) =>(
             <View style={styles.card} key={id}>
@@ -29,6 +29,13 @@ const ContactList = () => {
 export default ContactList
 
 const styles = StyleSheet.create({
+  text: {
+    color: 'black',
+    fontSize: 28,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 20,
+},
     cardImage: {
         width: 100,
         height: 100,
