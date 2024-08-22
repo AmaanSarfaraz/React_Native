@@ -1,7 +1,3 @@
 <resources>
-<<<<<<< HEAD
     <string name="app_name">myNativeApp</string>
-=======
-    <string name="app_name">react_native_app</string>
->>>>>>> f8d73e9890c37012d5008e2466e84cb3006c4ffd
 </resources>

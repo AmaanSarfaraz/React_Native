@@ -7,7 +7,7 @@ const ActionCard = () => {
     }
   return (
     <View>
-      <Text>ActionCard</Text>
+      <Text style={styles.text}>ActionCard</Text>
       <View>
         <Image style={styles.cardImage} source={{uri:'https://images.unsplash.com/photo-1720524270904-43dc519c1b65?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0OHx8fGVufDB8fHx8fA%3D%3D'}}/>
         <View>
@@ -30,6 +30,13 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         overflow: 'hidden',
         resizeMode: 'cover'
+    },
+    text: {
+      color: 'black',
+      fontSize: 28,
+      fontWeight: 'bold',
+      textAlign: 'center',
+      marginBottom: 20,
     },
     cardButton: {
         backgroundColor: '#007bff',
